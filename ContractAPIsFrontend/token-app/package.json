@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "proxy": "https://actool.contract.sti2.at/"
+    "proxy": "http://138.232.18.138:5002/"
   },
   "eslintConfig": {
     "extends": [
