@@ -12,7 +12,7 @@ const Login = () => {
     setToken("");
     if (username && password) {
       axios
-        .get("http://138.232.18.138:5002/api/token/", {
+        .get("http://actool.contract.sti2.at/api/token/", {
           headers: {
             username: username,
             password: password,
