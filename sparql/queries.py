@@ -142,7 +142,7 @@ class SPARQL(UserCredentials):
             res.status_code = 404
             return res
 
-    def contract_revoke_by_id(self, id):
+    def contract_update_by_id(self, id):
         sparql = self.init_sparql(
             self.HOST_URI_POST, self.get_username(), self.get_password())
         revoke_date = date.today()

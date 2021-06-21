@@ -7,7 +7,7 @@ from credentials.user_credentials import UserCredentials
 
 class GetContractById(MethodResource, Resource, UserCredentials):
     @doc(description='Get contract by contract id.', tags=['Contract By Contract Id'])
-    # @UserCredentials.check_for_token
+    @UserCredentials.check_for_token
     def get(self, id):
         query = SPARQL()
         response = query.get_contract_by_id(id)
