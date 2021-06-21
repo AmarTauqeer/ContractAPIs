@@ -24,6 +24,9 @@ CORS(app)
 cors = CORS(app, resources={
     r"/api/*": {
         "origins": "*"
+    },
+    r"http://138.232.18.138:3000/": {
+        "origins": "*"
     }
 })
 api = Api(app)
