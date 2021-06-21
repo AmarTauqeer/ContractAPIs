@@ -55,7 +55,7 @@ class ContractRequestSchema(Schema):
 
 class ContractCreate(MethodResource, Resource, UserCredentials):
     @doc(description='create contract.', tags=['Create Contract'])
-    # @UserCredentials.check_for_token
+    @UserCredentials.check_for_token
     @use_kwargs(ContractRequestSchema)
     def post(self, **kwargs):
         query = SPARQL()
