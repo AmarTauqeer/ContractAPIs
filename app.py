@@ -5,14 +5,14 @@ from flask_restful import Api
 from apispec import APISpec
 from flask_apispec.extension import FlaskApiSpec
 from apispec.ext.marshmallow import MarshmallowPlugin
-from flask_cors import CORS
+# from flask_cors import CORS
 from dotenv import load_dotenv
 # contract resources
 from resources.contracts import Contracts
 from resources.contract_by_requester import GetContractByRequester
 from resources.contract_by_provider import GetContractByProvider
 from resources.contract_create import ContractCreate
-from resources.contract_revoke import ContractRevokeByContractId
+from resources.contract_update import ContractRevokeByContractId
 from resources.contract_by_id import GetContractById
 from resources.generate_token import GenerateToken
 
@@ -20,15 +20,15 @@ from resources.generate_token import GenerateToken
 app = Flask(__name__)
 load_dotenv()
 # cors enable for swagger-editor
-CORS(app)
-cors = CORS(app, resources={
-    r"/api/*": {
-        "origins": "*"
-    },
-    r"http://138.232.18.138:3000/": {
-        "origins": "*"
-    }
-})
+# CORS(app)
+# cors = CORS(app, resources={
+#     r"/api/*": {
+#         "origins": "*"
+#     },
+#     r"http://138.232.18.138:3000/": {
+#         "origins": "*"
+#     }
+# })
 api = Api(app)
 # swagger configuration
 app.config.update({
