@@ -4,7 +4,7 @@ from flask_apispec.views import MethodResource
 from flask import jsonify
 from functools import wraps
 import jwt
-import datetime
+from datetime import datetime, timedelta
 
 
 class GenerateToken(MethodResource, Resource):
@@ -20,18 +20,18 @@ class GenerateToken(MethodResource, Resource):
                 if request.authorization.username == username and request.authorization.password == password:
                     token = jwt.encode({
                         'username': username,
-                        'exp': datetime.datetime.utcnow()+datetime.timedelta(minutes=15)
+                        'exp': datetime.utcnow() + timedelta(minutes=30)
                     }, secret_key)
-                    return jsonify({'token': token})
+                    return jsonify({'token': token.decode('UTF-8')})
                 else:
                     return 'username or password is not correct'
             elif request.headers.get('username') and request.headers.get('password'):
                 if request.headers.get('username') == username and request.headers.get('password') == password:
                     token = jwt.encode({
                         'username': username,
-                        'exp': datetime.datetime.utcnow()+datetime.timedelta(minutes=15)
+                        'exp': datetime.utcnow() + timedelta(minutes=30)
                     }, secret_key)
-                    return jsonify({'token': token})
+                    return jsonify({'token': token.decode('UTF-8')})
                 else:
                     return 'username or password is not correct'
             else:
