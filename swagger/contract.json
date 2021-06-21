@@ -12,18 +12,18 @@
   },
   "servers": [
     {
-      "url": "http://127.0.0.1:5000/api"
+      "url": "https://actool.contract.sti2.at/api"
     }
   ],
   "paths": {
     "/contract/create/": {
       "post": {
+        "summary": "Creates a contract.",
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Creates a contract.",
         "requestBody": {
           "required": true,
           "content": {
@@ -122,9 +122,9 @@
         }
       }
     },
-    "/contract/contract_revoke_by_id/{id}/": {
+    "/contract/contract_update_by_id/{id}/": {
       "put": {
-        "summary": "Revoke a contract by contract id.",
+        "summary": "Update a contract by contract id.",
         "security": [
           {
             "bearerAuth": []
