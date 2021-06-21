@@ -12,7 +12,7 @@ from resources.contracts import Contracts
 from resources.contract_by_requester import GetContractByRequester
 from resources.contract_by_provider import GetContractByProvider
 from resources.contract_create import ContractCreate
-from resources.contract_update import ContractRevokeByContractId
+from resources.contract_update import ContractUpdateByContractId
 from resources.contract_by_id import GetContractById
 from resources.generate_token import GenerateToken
 
@@ -23,9 +23,6 @@ load_dotenv()
 # CORS(app)
 # cors = CORS(app, resources={
 #     r"/api/*": {
-#         "origins": "*"
-#     },
-#     r"http://138.232.18.138:3000/": {
 #         "origins": "*"
 #     }
 # })
@@ -53,7 +50,7 @@ docs.register(GetContractByRequester)
 api.add_resource(GetContractById, '/api/contract/contract_by_id/<string:id>/')
 docs.register(GetContractById)
 api.add_resource(ContractRevokeByContractId,
-                 '/api/contract/contract_revoke_by_id/<string:id>/')
+                 '/api/contract/contract_update_by_id/<string:id>/')
 docs.register(ContractRevokeByContractId)
 api.add_resource(GetContractByProvider,
                  '/api/contract/contract_by_provider/<string:provider>/')

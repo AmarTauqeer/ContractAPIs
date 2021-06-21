@@ -21,7 +21,9 @@ class UserCredentials:
                 return jsonify({'message': 'Token is missed'})
             try:
                 # remove bearer keyword and a space
-                token = token[7:]
+                # token = token[7:]
+                # print(token)
+                print(os.getenv('SECRET_KEY'))
                 data = jwt.decode(token, os.getenv('SECRET_KEY'))
             except:
                 return jsonify({'message': 'invalid token'})
