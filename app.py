@@ -49,9 +49,9 @@ api.add_resource(GetContractByRequester,
 docs.register(GetContractByRequester)
 api.add_resource(GetContractById, '/api/contract/contract_by_id/<string:id>/')
 docs.register(GetContractById)
-api.add_resource(ContractRevokeByContractId,
+api.add_resource(ContractUpdateByContractId,
                  '/api/contract/contract_update_by_id/<string:id>/')
-docs.register(ContractRevokeByContractId)
+docs.register(ContractUpdateByContractId)
 api.add_resource(GetContractByProvider,
                  '/api/contract/contract_by_provider/<string:provider>/')
 docs.register(GetContractByProvider)
